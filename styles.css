@@ -630,6 +630,17 @@ em { font-style: italic; color: var(--gold-500); font-family: var(--serif); }
   max-width: 28ch;
 }
 
+/* Spontaneous entrance: fade-up + scale cuando empieza el count-up */
+.stat__value {
+  opacity: 0;
+  transform: translateY(14px) scale(0.92);
+  transition: opacity .6s var(--ease-out), transform .7s var(--ease-out);
+}
+.stat__value.is-counted {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 .marquee { padding: var(--s-5) 0; overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: var(--s-6); }
 .marquee__track {
   display: flex; gap: var(--s-7); align-items: center;

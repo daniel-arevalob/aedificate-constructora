@@ -21,25 +21,60 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="Logos/Monograma Logo.png" />
 
-  <!-- Safety net: contadores que suben SIEMPRE -->
+  <!-- Counters: aparecen espontáneamente con count-up al entrar al viewport -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    (function () {
       var els = document.querySelectorAll('[data-count]');
-      els.forEach(function (el) {
-        var t = parseInt(el.getAttribute('data-count'), 10);
-        if (isNaN(t)) return;
+      if (!els.length) return;
+
+      function animateCount(el) {
+        if (el.dataset.counted === 'true') return;
+        el.dataset.counted = 'true';
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        if (isNaN(target)) return;
+
+        // Anima el contenedor (fade-up + scale) junto con el número
+        var value = el.closest('.stat__value');
+        if (value) {
+          value.classList.remove('is-counted');
+          // Forzar reflow para reiniciar la animación CSS
+          void value.offsetWidth;
+          value.classList.add('is-counted');
+        }
+
         var start = performance.now();
-        var dur = 1600;
+        var dur = 1800;
         function tick(now) {
           var p = Math.min(1, (now - start) / dur);
-          var v = Math.round(t * (1 - Math.pow(1 - p, 3)));
+          // Ease-out cubic
+          var v = Math.round(target * (1 - Math.pow(1 - p, 3)));
           el.textContent = v;
           if (p < 1) requestAnimationFrame(tick);
-          else el.textContent = t;
+          else el.textContent = target;
         }
         requestAnimationFrame(tick);
-      });
-    });
+      }
+
+      // Trigger 1: IntersectionObserver (dispara al entrar al viewport)
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              animateCount(en.target);
+              io.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.4, rootMargin: '0px 0px -100px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(animateCount);
+      }
+
+      // Trigger 2: Fallback de tiempo (si el observer no dispara en 2s)
+      setTimeout(function () {
+        els.forEach(function (el) { animateCount(el); });
+      }, 2000);
+    })();
   </script>
 
   <!-- JSON-LD: SEO local -->
