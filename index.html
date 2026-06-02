@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A1628" />
+  <title>Aedificate Constructora — Arquitectura, Estructura e Ingeniería en Ecuador</title>
+  <meta name="description" content="Aedificate Constructora · Innovación y calidad en la construcción. Consultoría, diseño, obras civiles, construcción industrial e infraestructura en Quito, Macas, Cuenca y Loja." />
+  <meta name="keywords" content="constructora Ecuador, arquitectura Quito, ingeniería Cuenca, construcción Loja, Macas, Aedificate, estructura, obras civiles" />
+  <meta property="og:title" content="Aedificate Constructora — Arquitectura, Estructura e Ingeniería" />
+  <meta property="og:description" content="Construimos lo que perdura. Quito · Macas · Cuenca · Loja." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aedificateconstructora.com" />
+  <link rel="canonical" href="https://aedificateconstructora.com" />
+
+  <!-- Fonts: Fraunces (display serif) + Inter (UI sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="Logos/Monograma Logo.png" />
+
+  <!-- Safety net: contadores que suben SIEMPRE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var els = document.querySelectorAll('[data-count]');
+      els.forEach(function (el) {
+        var t = parseInt(el.getAttribute('data-count'), 10);
+        if (isNaN(t)) return;
+        var start = performance.now();
+        var dur = 1600;
+        function tick(now) {
+          var p = Math.min(1, (now - start) / dur);
+          var v = Math.round(t * (1 - Math.pow(1 - p, 3)));
+          el.textContent = v;
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = t;
+        }
+        requestAnimationFrame(tick);
+      });
+    });
+  </script>
+
+  <!-- JSON-LD: SEO local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "Aedificate Constructora",
+    "url": "https://aedificateconstructora.com",
+    "telephone": "+593-99-580-1102",
+    "description": "Constructora ecuatoriana especializada en arquitectura, estructura e ingeniería. Obras residenciales, comerciales e industriales.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Quito",
+      "addressCountry": "EC"
+    },
+    "areaServed": ["Quito", "Macas", "Cuenca", "Loja"],
+    "sameAs": ["https://instagram.com/aedificateconstructora"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <img class="preloader__logo" src="Logos/Monograma Logo.png" alt="Aedificate" />
+      <div class="preloader__bar"><span></span></div>
+      <span class="preloader__year">EST. ECUADOR · 2018</span>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- Top progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Header / Nav -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__brand" aria-label="Aedificate inicio">
+        <img class="nav__logo nav__logo--full" src="Logos/Logo Aedificate.png" alt="Aedificate Constructora" />
+      </a>
+
+      <nav class="nav__menu" aria-label="Principal">
+        <ul>
+          <li><a href="#about" data-link>Estudio</a></li>
+          <li><a href="#services" data-link>Servicios</a></li>
+          <li><a href="#projects" data-link>Proyectos</a></li>
+          <li><a href="#process" data-link>Proceso</a></li>
+          <li><a href="#contact" data-link>Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto." class="btn btn--whatsapp btn--sm" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.526l-.999 3.648 3.805-.873zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <a href="#contact" class="btn btn--ghost btn--sm">
+          <span>Cotizar</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#about" data-link>Estudio</a></li>
+      <li><a href="#services" data-link>Servicios</a></li>
+      <li><a href="#projects" data-link>Proyectos</a></li>
+      <li><a href="#process" data-link>Proceso</a></li>
+      <li><a href="#contact" data-link>Contacto</a></li>
+    </ul>
+    <div class="mobile-menu__foot">
+      <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto." class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+        <span>Escríbenos por WhatsApp</span>
+      </a>
+      <p style="margin-top:1.5rem">aedificateconstructora.com</p>
+    </div>
+  </div>
+
+  <main id="top">
+    <!-- HERO with video background -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__media">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="" aria-hidden="true">
+          <source src="Assets/Video/video-hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__overlay"></div>
+        <div class="hero__grain"></div>
+      </div>
+
+      <div class="container hero__content">
+        <div class="hero__panel">
+          <div class="hero__eyebrow">
+            <span class="hero__pulse" aria-hidden="true"></span>
+            <span class="hero__eyebrow-text">Quito · Macas · Cuenca · Loja</span>
+          </div>
+
+          <h1 class="hero__title">
+            <span class="reveal-line" data-reveal-line><span>Construimos</span></span>
+            <span class="reveal-line" data-reveal-line><span><em>con calidad,</em></span></span>
+            <span class="reveal-line" data-reveal-line><span>proyectamos <em>confianza</em>.</span></span>
+          </h1>
+
+          <div class="hero__divider" aria-hidden="true"></div>
+
+          <p class="hero__lead" data-reveal>
+            <em class="hero__tagline">“Innovación y calidad en la construcción.”</em>
+            Aedificate integra consultoría, diseño, obras civiles, construcción
+            industrial e infraestructura bajo un mismo techo. Equipo
+            multidisciplinario, metodologías de vanguardia y enfoque en el
+            desarrollo sostenible.
+          </p>
+
+          <div class="hero__cta">
+            <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto." class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.526l-.999 3.648 3.805-.873zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              <span>Cotizar por WhatsApp</span>
+            </a>
+            <a href="#projects" class="btn btn--link">
+              <span>Ver proyectos</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="hero__meta">
+            <span class="hero__meta-item">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Respondemos en &lt; 24h
+            </span>
+            <span class="hero__meta-dot" aria-hidden="true">·</span>
+            <span class="hero__meta-item">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Cotización sin compromiso
+            </span>
+            <span class="hero__meta-dot" aria-hidden="true">·</span>
+            <span class="hero__meta-item">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>
+              4 sedes en Ecuador
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#stats" class="hero__scroll" aria-label="Desplazar hacia abajo">
+        <span>Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- Stats marquee -->
+    <section class="stats" id="stats" aria-label="Cifras">
+      <div class="container stats__grid">
+        <div class="stat">
+          <span class="stat__num" data-count="7">0</span>
+          <span class="stat__plus">+</span>
+          <span class="stat__label">Años construyendo en Ecuador</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="8">0</span>
+          <span class="stat__label">Líneas de servicio integrales</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="4">0</span>
+          <span class="stat__label">Ciudades: Quito · Macas · Cuenca · Loja</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="100">0</span>
+          <span class="stat__plus">%</span>
+          <span class="stat__label">Cumplimiento de plazos</span>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Consultoría</span><span class="marquee__dot">◆</span>
+          <span>Diseño Arquitectónico</span><span class="marquee__dot">◆</span>
+          <span>Cálculo Estructural</span><span class="marquee__dot">◆</span>
+          <span>Obras Civiles</span><span class="marquee__dot">◆</span>
+          <span>Construcción Industrial</span><span class="marquee__dot">◆</span>
+          <span>Infraestructura</span><span class="marquee__dot">◆</span>
+          <span>Gestión Ambiental</span><span class="marquee__dot">◆</span>
+          <span>Capacitación</span><span class="marquee__dot">◆</span>
+          <span>Consultoría</span><span class="marquee__dot">◆</span>
+          <span>Diseño Arquitectónico</span><span class="marquee__dot">◆</span>
+          <span>Cálculo Estructural</span><span class="marquee__dot">◆</span>
+          <span>Obras Civiles</span><span class="marquee__dot">◆</span>
+          <span>Construcción Industrial</span><span class="marquee__dot">◆</span>
+          <span>Infraestructura</span><span class="marquee__dot">◆</span>
+          <span>Gestión Ambiental</span><span class="marquee__dot">◆</span>
+          <span>Capacitación</span><span class="marquee__dot">◆</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about" aria-label="Estudio">
+      <div class="container about__grid">
+        <div class="about__media">
+          <div class="about__img about__img--main" style="background-image:url('https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=1600&q=80')"></div>
+          <div class="about__img about__img--sub" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="about__badge">
+            <span class="about__badge-num">7</span>
+            <span class="about__badge-text">Años<br/>forjando oficio</span>
+          </div>
+        </div>
+
+        <div class="about__copy">
+          <span class="eyebrow" data-reveal>— El estudio</span>
+          <h2 class="display" data-reveal>
+            Una constructora ecuatoriana donde la <em>estructura</em> define la forma
+            y la forma hace <em>estructura</em>.
+          </h2>
+          <p data-reveal>
+            Fundada en 2018, Aedificate brinda servicios integrales en
+            <strong>consultoría, construcción e inmobiliaria</strong>, respaldada
+            por un equipo multidisciplinario de profesionales en distintas ramas
+            de la ingeniería. Aplicamos propuestas técnicas y metodologías
+            innovadoras orientadas a ofrecer soluciones eficientes y de alta
+            calidad, garantizando el cumplimiento de los objetivos del cliente,
+            el alcance definido y los plazos establecidos.
+          </p>
+          <ul class="about__list" data-reveal>
+            <li><span>01</span>Diseño arquitectónico, estructural e instalaciones</li>
+            <li><span>02</span>Consultoría, fiscalización y dirección de proyectos</li>
+            <li><span>03</span>Obras civiles, industriales e infraestructura</li>
+            <li><span>04</span>Gestión ambiental, seguridad y capacitación</li>
+          </ul>
+          <div class="about__cta" data-reveal>
+            <a href="#projects" class="btn btn--ghost">
+              <span>Explorar obras</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://instagram.com/aedificateconstructora" target="_blank" rel="noopener" class="btn btn--link">
+              <span>Síguenos en Instagram</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores + Por qué elegirnos -->
+    <section class="why" id="why" aria-label="Valores y diferenciales">
+      <div class="container">
+        <div class="why__grid">
+          <article class="why__col" data-reveal>
+            <span class="eyebrow">— Nuestros valores</span>
+            <h2 class="display">Cinco principios que <em>no negociamos</em>.</h2>
+            <ul class="values__list">
+              <li>
+                <span class="values__check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                </span>
+                <div>
+                  <strong>Calidad técnica</strong>
+                  <span>Soluciones eficientes, calculadas y bien detalladas.</span>
+                </div>
+              </li>
+              <li>
+                <span class="values__check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                </span>
+                <div>
+                  <strong>Seguridad en obra</strong>
+                  <span>Protocolos SSO y cero accidentes como estándar.</span>
+                </div>
+              </li>
+              <li>
+                <span class="values__check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                </span>
+                <div>
+                  <strong>Responsabilidad</strong>
+                  <span>Asumimos cada proyecto como propio, de principio a fin.</span>
+                </div>
+              </li>
+              <li>
+                <span class="values__check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                </span>
+                <div>
+                  <strong>Transparencia</strong>
+                  <span>Información clara, presupuestos abiertos, reportes semanales.</span>
+                </div>
+              </li>
+              <li>
+                <span class="values__check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="fill" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                </span>
+                <div>
+                  <strong>Cumplimiento de plazos</strong>
+                  <span>El cronograma se cumple — sin excusas, sin sorpresas.</span>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="why__col" data-reveal>
+            <span class="eyebrow">— Por qué elegirnos</span>
+            <h2 class="display">Lo que nos hace <em>distintos</em>.</h2>
+            <ol class="reasons__list">
+              <li>
+                <span class="reasons__num">01</span>
+                <div>
+                  <strong>Gestión técnica y administrativa eficiente</strong>
+                  <span>Un único interlocutor para diseño, cálculo, permisos y obra.</span>
+                </div>
+              </li>
+              <li>
+                <span class="reasons__num">02</span>
+                <div>
+                  <strong>Control de costos, calidad y tiempos</strong>
+                  <span>Reportes semanales con indicadores verificables.</span>
+                </div>
+              </li>
+              <li>
+                <span class="reasons__num">03</span>
+                <div>
+                  <strong>Personal calificado y supervisión permanente</strong>
+                  <span>Equipo multidisciplinario presente en cada obra.</span>
+                </div>
+              </li>
+              <li>
+                <span class="reasons__num">04</span>
+                <div>
+                  <strong>Cumplimiento de normativas y estándares constructivos</strong>
+                  <span>NEC, SUIA, IESS, SUT y normativa local vigente.</span>
+                </div>
+              </li>
+              <li>
+                <span class="reasons__num">05</span>
+                <div>
+                  <strong>Compromiso con la seguridad y el entorno</strong>
+                  <span>Prácticas ambientalmente responsables y seguras.</span>
+                </div>
+              </li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services" aria-label="Servicios">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow" data-reveal>— Servicios</span>
+          <h2 class="display" data-reveal>Ocho líneas de servicio, <em>una sola</em> firma.</h2>
+          <p data-reveal>Brindamos servicios integrales en consultoría, construcción e inmobiliaria, con propuestas técnicas y metodologías innovadoras orientadas a ofrecer soluciones eficientes y de alta calidad.</p>
+        </header>
+
+        <div class="services__grid">
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11l3 3 8-8M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div class="service__num">01</div>
+            <h3 class="service__title">Consultoría y Gestión de Proyectos</h3>
+            <ul>
+              <li>Consultoría y asesoramiento integral de proyectos</li>
+              <li>Dirección, fiscalización y residencias</li>
+            </ul>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3zM10 6h4M6 10v4M18 10v4M10 18h4"/></svg>
+            </div>
+            <div class="service__num">02</div>
+            <h3 class="service__title">Diseño e Ingeniería</h3>
+            <ul>
+              <li>Diseño arquitectónico</li>
+              <li>Diseño y cálculo estructural</li>
+              <li>Diseños hidrosanitarios y eléctricos</li>
+              <li>Estudios de suelos y levantamientos topográficos</li>
+            </ul>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21V8l9-5 9 5v13M9 21V12h6v9M3 21h18"/></svg>
+            </div>
+            <div class="service__num">03</div>
+            <h3 class="service__title">Obras Civiles</h3>
+            <ul>
+              <li>Edificaciones residenciales y comerciales</li>
+              <li>Viviendas unifamiliares y multifamiliares</li>
+              <li>Urbanizaciones</li>
+            </ul>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V8h14v13M9 21v-6h6v6M8 8V5a2 2 0 012-2h4a2 2 0 012 2v3"/></svg>
+            </div>
+            <div class="service__num">04</div>
+            <h3 class="service__title">Construcción Industrial</h3>
+            <ul>
+              <li>Naves industriales</li>
+              <li>Bodegas y estructuras metálicas</li>
+              <li>Plantas productivas</li>
+            </ul>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20l4-9 4 6 3-4 5 7M3 6h18M3 11h18"/></svg>
+            </div>
+            <div class="service__num">05</div>
+            <h3 class="service__title">Infraestructura</h3>
+            <ul>
+              <li>Vías y pavimentación</li>
+              <li>Obras hidráulicas y sanitarias</li>
+              <li>Estructuras de hormigón armado</li>
+            </ul>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 4l6 6-10 10H4v-6L14 4zM13 5l6 6"/></svg>
+            </div>
+            <div class="service__num">06</div>
+            <h3 class="service__title">Remodelaciones y Mantenimiento</h3>
+            <ul>
+              <li>Rehabilitación de edificaciones</li>
+              <li>Adecuaciones estructurales y funcionales</li>
+            </ul>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v6M12 22v-6M2 12h6M22 12h-6M5 5l4 4M19 19l-4-4M5 19l4-4M19 5l-4 4"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="service__num">07</div>
+            <h3 class="service__title">Gestión Ambiental y Seguridad</h3>
+            <ul>
+              <li>Trámites de registros y licencias ambientales</li>
+              <li>Sistemas de Seguridad y Salud Ocupacional</li>
+              <li>Plataformas SUIA, IESS y SUT</li>
+            </ul>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 10v6M2 10l10-5 10 5-10 5z M6 12v5a6 6 0 0012 0v-5"/></svg>
+            </div>
+            <div class="service__num">08</div>
+            <h3 class="service__title">Capacitación y Formación</h3>
+            <ul>
+              <li>Capacitaciones empresariales y profesionales</li>
+              <li>Certificaciones de Prevención de Riesgos</li>
+              <li>Trabajos en Alturas</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mvv" aria-label="Misión y Visión">
+      <div class="container mvv__grid">
+        <article class="mvv__card mvv__card--mission" data-reveal>
+          <span class="mvv__label">— Nuestra</span>
+          <h3 class="mvv__title">Misión</h3>
+          <p class="mvv__text">
+            Brindar valor a nuestros clientes a través de la prestación de
+            servicios de diferentes áreas de ingeniería, de consultoría y
+            construcción, implementando metodologías que estén a la vanguardia
+            y con enfoque al desarrollo sostenible, superando las expectativas
+            establecidas de calidad, seguridad y tiempo.
+          </p>
+        </article>
+
+        <article class="mvv__card mvv__card--vision" data-reveal>
+          <span class="mvv__label">— Nuestra</span>
+          <h3 class="mvv__title">Visión</h3>
+          <p class="mvv__text">
+            Ser punto de referencia a nivel nacional e internacional en
+            servicios de ingeniería, consultoría y construcción, empleando
+            tecnologías y metodologías de vanguardia, promoviendo el desarrollo
+            sostenible.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects" aria-label="Proyectos">
+      <div class="container">
+        <header class="section-head section-head--row">
+          <div>
+            <span class="eyebrow" data-reveal>— Portafolio</span>
+            <h2 class="display" data-reveal>22 obras que <em>respaldan</em> nuestra firma.</h2>
+            <p class="section-head__lead" data-reveal>Desde mercados municipales hasta puentes carreteros, edificios residenciales y consultoría ambiental — una muestra del alcance real de Aedificate en Ecuador.</p>
+          </div>
+          <div class="projects__filters" data-reveal>
+            <button class="chip is-active" data-filter="all">Todos</button>
+            <button class="chip" data-filter="infra">Infraestructura</button>
+            <button class="chip" data-filter="residential">Residencial</button>
+            <button class="chip" data-filter="commercial">Comercial</button>
+            <button class="chip" data-filter="consulting">Consultoría</button>
+          </div>
+        </header>
+
+        <!-- Featured: 6 obras emblemáticas con imagen -->
+        <div class="projects__grid">
+          <a class="project project--lg project--gallery" data-cat="infra" data-reveal>
+            <div class="project__gallery">
+              <div class="project__img is-active" style="background-image:url('Assets/01-mercado-macas/01.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/01-mercado-macas/02.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/01-mercado-macas/03.jpg')"></div>
+            </div>
+            <div class="project__indicator" aria-hidden="true">
+              <span class="is-active"></span><span></span><span></span>
+            </div>
+            <div class="project__meta">
+              <span class="project__cat">Infraestructura · Obra pública</span>
+              <h3 class="project__title">Mercado Municipal y Centro Comercial de Macas</h3>
+              <span class="project__loc">Macas, Morona Santiago · 11.492 m²</span>
+              <span class="project__data">$5'108.985 · 623 ton de estructura metálica</span>
+            </div>
+          </a>
+
+          <a class="project project--gallery" data-cat="infra" data-reveal>
+            <div class="project__gallery">
+              <div class="project__img is-active" style="background-image:url('Assets/02-puente-pastaza/01.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/02-puente-pastaza/02.jpg')"></div>
+            </div>
+            <div class="project__indicator" aria-hidden="true">
+              <span class="is-active"></span><span></span>
+            </div>
+            <div class="project__meta">
+              <span class="project__cat">Infraestructura · Puente</span>
+              <h3 class="project__title">Puente Carrozable Río Pastaza</h3>
+              <span class="project__loc">Cumandá · Palora · 120 m</span>
+              <span class="project__data">$4'077.953 · 17,8 ton</span>
+            </div>
+          </a>
+
+          <a class="project project--gallery" data-cat="commercial" data-reveal>
+            <div class="project__gallery">
+              <div class="project__img is-active" style="background-image:url('Assets/06-dr-consultores/01.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/06-dr-consultores/02.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/06-dr-consultores/03.jpg')"></div>
+            </div>
+            <div class="project__indicator" aria-hidden="true">
+              <span class="is-active"></span><span></span><span></span>
+            </div>
+            <div class="project__meta">
+              <span class="project__cat">Comercial · Oficinas</span>
+              <h3 class="project__title">Remodelación Oficinas DR Consultores</h3>
+              <span class="project__loc">Edif. Metrópoli · Quito · 80 m²</span>
+              <span class="project__data">Estudio jurídico · Diseño + ejecución</span>
+            </div>
+          </a>
+
+          <a class="project" data-cat="residential" data-reveal>
+            <div class="project__img is-active" style="background-image:url('Assets/03-edificio-hd/01.png')"></div>
+            <div class="project__meta">
+              <span class="project__cat">Residencial · Hormigón armado</span>
+              <h3 class="project__title">Edificio Residencial HD</h3>
+              <span class="project__loc">Quito · 957,21 m²</span>
+              <span class="project__data">Edificio en hormigón armado</span>
+            </div>
+          </a>
+
+          <a class="project project--wide project--gallery" data-cat="residential" data-reveal>
+            <div class="project__gallery">
+              <div class="project__img is-active" style="background-image:url('Assets/04-residencia-ls/01.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/04-residencia-ls/02.png')"></div>
+              <div class="project__img" style="background-image:url('Assets/04-residencia-ls/03.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/04-residencia-ls/04.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/04-residencia-ls/05.jpg')"></div>
+            </div>
+            <div class="project__indicator" aria-hidden="true">
+              <span class="is-active"></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="project__meta">
+              <span class="project__cat">Residencial · Diseño y construcción</span>
+              <h3 class="project__title">Residencia L-S</h3>
+              <span class="project__loc">Nayón · Quito · 280 m²</span>
+              <span class="project__data">Diseño · Obra civil · Acabados · Piscina</span>
+            </div>
+          </a>
+
+          <a class="project project--gallery" data-cat="residential" data-reveal>
+            <div class="project__gallery">
+              <div class="project__img is-active" style="background-image:url('Assets/05-quinta-je/01.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/05-quinta-je/02.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/05-quinta-je/03.jpg')"></div>
+              <div class="project__img" style="background-image:url('Assets/05-quinta-je/04.jpg')"></div>
+            </div>
+            <div class="project__indicator" aria-hidden="true">
+              <span class="is-active"></span><span></span><span></span><span></span>
+            </div>
+            <div class="project__meta">
+              <span class="project__cat">Residencial · Espacios exteriores</span>
+              <h3 class="project__title">Construcción Espacios Exteriores · Quinta J-E</h3>
+              <span class="project__loc">Yaruquí · Quito · 110 m²</span>
+              <span class="project__data">Diseño neovernáculo con ladrillo visto</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Portafolio completo: 22 proyectos, agrupados por categoría, sin imagen -->
+        <div class="portfolio" data-reveal>
+          <header class="portfolio__head">
+            <h3 class="portfolio__title">Portafolio completo</h3>
+            <p class="portfolio__sub">Obras de infraestructura, residenciales, comerciales y consultoría técnica ejecutadas por Aedificate.</p>
+          </header>
+
+          <!-- Infraestructura y Obras Públicas -->
+          <details class="portfolio__group" open>
+            <summary>
+              <span class="portfolio__num">04</span>
+              <span class="portfolio__name">Infraestructura y Obras Públicas</span>
+              <span class="portfolio__count">4 obras</span>
+              <span class="portfolio__chev" aria-hidden="true">+</span>
+            </summary>
+            <ul class="portfolio__items">
+              <li class="portfolio__item" data-cat="infra">
+                <div class="pi__main">
+                  <strong>Mercado Municipal y Centro Comercial de Macas</strong>
+                  <span class="pi__loc">Macas, Morona Santiago</span>
+                </div>
+                <ul class="pi__tags">
+                  <li>11.492,14 m²</li>
+                  <li>623 ton</li>
+                  <li>$5'108.985</li>
+                </ul>
+              </li>
+              <li class="portfolio__item" data-cat="infra">
+                <div class="pi__main">
+                  <strong>Puente Carrozable sobre el Río Pastaza</strong>
+                  <span class="pi__loc">Cumandá · Palora, Morona Santiago</span>
+                </div>
+                <ul class="pi__tags">
+                  <li>120 m</li>
+                  <li>17,8 ton</li>
+                  <li>$4'077.953</li>
+                </ul>
+              </li>
+              <li class="portfolio__item" data-cat="infra">
+                <div class="pi__main">
+                  <strong>Regeneración Urbana · Calles Sucre, Cuenca, Don Bosco y Av. 29 de Mayo</strong>
+                  <span class="pi__loc">Macas, Morona Santiago</span>
+                </div>
+                <ul class="pi__tags">
+                  <li>$1'240.327</li>
+                  <li>Ejecución: PRODETE</li>
+                </ul>
+              </li>
+              <li class="portfolio__item" data-cat="infra">
+                <div class="pi__main">
+                  <strong>Estudio Definitivo del Puente sobre el Río Chiguaza</strong>
+                  <span class="pi__loc">Vía Shimpis · Chivias</span>
+                </div>
+                <ul class="pi__tags">
+                  <li>60 m</li>
+                  <li>Consultoría integral</li>
+                </ul>
+              </li>
+            </ul>
+          </details>
+
+          <!-- Residencial -->
+          <details class="portfolio__group">
+            <summary>
+              <span class="portfolio__num">11</span>
+              <span class="portfolio__name">Residencial</span>
+              <span class="portfolio__count">11 obras</span>
+              <span class="portfolio__chev" aria-hidden="true">+</span>
+            </summary>
+            <ul class="portfolio__items">
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Conjunto Residencial MB Etapa 2</strong>
+                  <span class="pi__loc">Cumbayá · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>3.400 m²</li><li>60 ton</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Edificio Residencial NP</strong>
+                  <span class="pi__loc">Quito</span>
+                </div>
+                <ul class="pi__tags"><li>1.289,35 m²</li><li>62 ton</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Residencia L-S</strong>
+                  <span class="pi__loc">Nayón · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>280 m²</li><li>Diseño + Obra civil + Piscina</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Edificio Residencial HD</strong>
+                  <span class="pi__loc">Quito</span>
+                </div>
+                <ul class="pi__tags"><li>957,21 m²</li><li>Hormigón armado</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Residencia Cubierta LB</strong>
+                  <span class="pi__loc">Quito</span>
+                </div>
+                <ul class="pi__tags"><li>110 m²</li><li>Estructura metálica</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Residencia D-A</strong>
+                  <span class="pi__loc">Cumbayá · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>270 m²</li><li>13,2 ton</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Construcción y Ampliación Residencia D-G</strong>
+                  <span class="pi__loc">Quito</span>
+                </div>
+                <ul class="pi__tags"><li>Luz 5 m</li><li>Estructura metálica</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Conjunto Residencial BG · Fiscalización</strong>
+                  <span class="pi__loc">Pifo · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>2.805 m²</li><li>18 viviendas</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Residencia Multifamiliar LL · Reforzamiento</strong>
+                  <span class="pi__loc">San Rafael · Sangolquí</span>
+                </div>
+                <ul class="pi__tags"><li>675 m²</li><li>Estudio + diseño</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Espacios Exteriores · Quinta J-E</strong>
+                  <span class="pi__loc">Yaruquí · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>110 m²</li><li>Diseño neovernáculo</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="residential">
+                <div class="pi__main">
+                  <strong>Diseño Residencia A-S</strong>
+                  <span class="pi__loc">Yaruquí · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>359 m²</li><li>Arq. + Ingenierías</li></ul>
+              </li>
+            </ul>
+          </details>
+
+          <!-- Comercial · Institucional · Industrial -->
+          <details class="portfolio__group">
+            <summary>
+              <span class="portfolio__num">04</span>
+              <span class="portfolio__name">Comercial · Institucional · Industrial</span>
+              <span class="portfolio__count">4 obras</span>
+              <span class="portfolio__chev" aria-hidden="true">+</span>
+            </summary>
+            <ul class="portfolio__items">
+              <li class="portfolio__item" data-cat="commercial">
+                <div class="pi__main">
+                  <strong>Remodelación Oficinas DR Consultores</strong>
+                  <span class="pi__loc">Edif. Metrópoli · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>80 m²</li><li>Estudio jurídico</li><li>Diseño + ejecución</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="commercial">
+                <div class="pi__main">
+                  <strong>Remodelación Oficinas DR-Consultores</strong>
+                  <span class="pi__loc">Edif. Metrópoli · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>80 m²</li><li>Diseño + ejecución</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="commercial">
+                <div class="pi__main">
+                  <strong>Estudio de Daños Estructurales · Edificio FA</strong>
+                  <span class="pi__loc">Quito</span>
+                </div>
+                <ul class="pi__tags"><li>2.200 m²</li><li>Informe técnico</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="commercial">
+                <div class="pi__main">
+                  <strong>Reforzamiento Cuarto de Máquinas CAM</strong>
+                  <span class="pi__loc">Quito</span>
+                </div>
+                <ul class="pi__tags"><li>190 m²</li><li>Estructura metálica</li></ul>
+              </li>
+            </ul>
+          </details>
+
+          <!-- Consultoría y Estudios -->
+          <details class="portfolio__group">
+            <summary>
+              <span class="portfolio__num">03</span>
+              <span class="portfolio__name">Consultoría y Estudios</span>
+              <span class="portfolio__count">3 obras</span>
+              <span class="portfolio__chev" aria-hidden="true">+</span>
+            </summary>
+            <ul class="portfolio__items">
+              <li class="portfolio__item" data-cat="consulting">
+                <div class="pi__main">
+                  <strong>División Proyecto La Loma · Levantamiento Topográfico</strong>
+                  <span class="pi__loc">Yaruquí · Quito</span>
+                </div>
+                <ul class="pi__tags"><li>40.000 m²</li><li>Topografía + subdivisión</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="consulting">
+                <div class="pi__main">
+                  <strong>Levantamiento Hacienda GH</strong>
+                  <span class="pi__loc">Cayambe</span>
+                </div>
+                <ul class="pi__tags"><li>110.901,66 m²</li><li>Topografía</li></ul>
+              </li>
+              <li class="portfolio__item" data-cat="consulting">
+                <div class="pi__main">
+                  <strong>+100 Levantamientos Topográficos a nivel nacional</strong>
+                  <span class="pi__loc">Cobertura nacional</span>
+                </div>
+                <ul class="pi__tags"><li>Topografía · Geomática</li></ul>
+              </li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="projects__cta" data-reveal>
+          <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20quisiera%20recibir%20el%20portafolio%20completo%20en%20PDF%20con%20fichas%20t%C3%A9cnicas%20de%20cada%20obra." class="btn btn--gold" target="_blank" rel="noopener">
+            <span>Solicitar portafolio completo en PDF</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process" aria-label="Proceso">
+      <div class="container process__grid">
+        <header class="process__head">
+          <span class="eyebrow" data-reveal>— Manera de trabajar</span>
+          <h2 class="display" data-reveal>Cuatro etapas. <em>Cero</em> improvisación.</h2>
+          <p data-reveal>Cada proyecto pasa por un protocolo afinado en más de 80 obras. La comunicación es directa, los plazos se cumplen y la calidad no se negocia — en ninguna de nuestras cuatro sedes.</p>
+        </header>
+
+        <ol class="process__list">
+          <li class="process__item" data-reveal>
+            <div class="process__num-wrap"><span class="process__num">01</span></div>
+            <div class="process__content">
+              <h3>Inmersión</h3>
+              <p>Visita al sitio, levantamiento, briefing profundo y estudio del entorno. La obra empieza aquí, aunque todavía no haya un solo ladrillo.</p>
+            </div>
+          </li>
+          <li class="process__item" data-reveal>
+            <div class="process__num-wrap"><span class="process__num">02</span></div>
+            <div class="process__content">
+              <h3>Diseño</h3>
+              <p>Concepto arquitectónico, anteproyecto y proyecto ejecutivo coordinados con la estructura y las instalaciones.</p>
+            </div>
+          </li>
+          <li class="process__item" data-reveal>
+            <div class="process__num-wrap"><span class="process__num">03</span></div>
+            <div class="process__content">
+              <h3>Construcción</h3>
+              <p>Ejecución con equipos propios y proveedores auditados. Reportes semanales, controles de calidad y un único interlocutor.</p>
+            </div>
+          </li>
+          <li class="process__item" data-reveal>
+            <div class="process__num-wrap"><span class="process__num">04</span></div>
+            <div class="process__content">
+              <h3>Entrega</h3>
+              <p>Pruebas finales, manuales, planos as-built y acompañamiento post-obra. La firma no termina al entregar llaves.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Coverage (sedes) -->
+    <section class="coverage" aria-label="Cobertura">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow" data-reveal>— Cobertura</span>
+          <h2 class="display" data-reveal>Una sola firma, <em>cuatro ciudades</em>.</h2>
+          <p data-reveal>Atendemos proyectos en Quito y valles, con sedes operativas en Macas, Cuenca y Loja. Cada sede cuenta con equipo técnico, taller y logística propia.</p>
+        </header>
+
+        <div class="coverage__grid">
+          <article class="city" data-reveal>
+            <div class="city__head">
+              <span class="city__num">HQ</span>
+              <h3>Quito</h3>
+              <span class="city__role">Casa matriz</span>
+            </div>
+            <ul>
+              <li>Diseño arquitectónico</li>
+              <li>Dirección de obra</li>
+              <li>Coordinación general</li>
+            </ul>
+          </article>
+          <article class="city" data-reveal>
+            <div class="city__head">
+              <span class="city__num">01</span>
+              <h3>Macas</h3>
+              <span class="city__role">Sede operativa · Amazonía</span>
+            </div>
+            <ul>
+              <li>Obras civiles y urbanas</li>
+              <li>Construcción industrial</li>
+              <li>Logística regional</li>
+            </ul>
+          </article>
+          <article class="city" data-reveal>
+            <div class="city__head">
+              <span class="city__num">02</span>
+              <h3>Cuenca</h3>
+              <span class="city__role">Sede operativa · Austro</span>
+            </div>
+            <ul>
+              <li>Arquitectura patrimonial</li>
+              <li>Remodelaciones</li>
+              <li>Obras residenciales</li>
+            </ul>
+          </article>
+          <article class="city" data-reveal>
+            <div class="city__head">
+              <span class="city__num">03</span>
+              <h3>Loja</h3>
+              <span class="city__role">Sede operativa · Sur</span>
+            </div>
+            <ul>
+              <li>Vivienda unifamiliar</li>
+              <li>Comercio y servicios</li>
+              <li>Asesoría técnica</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" aria-label="Testimonios">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow" data-reveal>— Voces</span>
+          <h2 class="display" data-reveal>Lo que dicen quienes <em>construyeron</em> con nosotros.</h2>
+        </header>
+
+        <div class="t-slider" id="tSlider">
+          <div class="t-track" id="tTrack">
+            <figure class="t-card">
+              <blockquote>“Aedificate entiende que una casa no es un objeto, es una vida. La precisión del cálculo se nota en cada junta, en cada luz, en cada decisión que tomaron con nosotros.”</blockquote>
+              <figcaption>
+                <strong>María del Cisne Vega</strong>
+                <span>Cliente · Casa Volcánica, Tumbaco</span>
+              </figcaption>
+            </figure>
+            <figure class="t-card">
+              <blockquote>“Cumplieron los plazos al día. Lo que en la construcción ecuatoriana es casi un milagro. Volveremos a trabajar con ellos sin dudarlo.”</blockquote>
+              <figcaption>
+                <strong>Roberto Cevallos</strong>
+                <span>Director · Inmobiliaria Cumbres, Quito</span>
+              </figcaption>
+            </figure>
+            <figure class="t-card">
+              <blockquote>“Su capacidad para integrar diseño, estructura e instalaciones en un solo equipo cambió nuestra manera de licitar. Una constructora seria, de las que ya casi no quedan.”</blockquote>
+              <figcaption>
+                <strong>Ing. Andrea Maldonado</strong>
+                <span>Gerente · Constructora Austral, Cuenca</span>
+              </figcaption>
+            </figure>
+            <figure class="t-card">
+              <blockquote>“El equipo de Macas terminó nuestra nave industrial antes de lo previsto y con un estándar de acabado que no esperábamos para esa zona. Excelente.”</blockquote>
+              <figcaption>
+                <strong>Luis Fernando Nugra</strong>
+                <span>Propietario · Planta Andina, Macas</span>
+              </figcaption>
+            </figure>
+            <figure class="t-card">
+              <blockquote>“Les entregamos un proyecto patrimonial con mucho riesgo y ellos lo ejecutaron con un cuidado que ya no se ve. El centro cultural de Cuenca es un orgullo para la ciudad.”</blockquote>
+              <figcaption>
+                <strong>Mgtr. Catalina Ordóñez</strong>
+                <span>Directora · Fundación Patrimonio Azuay</span>
+              </figcaption>
+            </figure>
+            <figure class="t-card">
+              <blockquote>“Cotizamos con cinco constructoras en Loja. Aedificate fue la única que presentó un proyecto ejecutivo completo, no un plano bonito. Eso nos decidió.”</blockquote>
+              <figcaption>
+                <strong>Familia Jaramillo-Burneo</strong>
+                <span>Cliente · Vivienda unifamiliar, Loja</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="t-nav">
+            <button class="t-arrow" id="tPrev" aria-label="Anterior">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M11 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="t-dots" id="tDots"></div>
+            <button class="t-arrow" id="tNext" aria-label="Siguiente">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Mark (firma oficial) -->
+    <section class="brand-mark" aria-label="Marca">
+      <div class="container brand-mark__inner">
+        <span class="eyebrow eyebrow--light" data-reveal>— Constructora</span>
+        <img src="Logos/Logo Aedificate.png" alt="Constructora Aedificate" class="brand-mark__logo" data-reveal />
+        <p class="brand-mark__tagline" data-reveal>
+          <em>“Innovación y calidad en la construcción.”</em>
+        </p>
+        <div class="brand-mark__divider" data-reveal aria-hidden="true"></div>
+        <p class="brand-mark__since" data-reveal>Desde 2018 · Quito · Macas · Cuenca · Loja</p>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner" aria-label="Llamada a la acción">
+      <div class="container cta-banner__inner">
+        <div>
+          <span class="eyebrow eyebrow--light" data-reveal>— Próximo paso</span>
+          <h2 class="display" data-reveal>¿Listo para construir <em>algo que valga</em>?</h2>
+          <p class="cta-banner__lead" data-reveal>Cuéntenos qué tiene en mente. Le respondemos por WhatsApp en menos de 24 horas hábiles y agendamos una primera reunión sin compromiso.</p>
+        </div>
+        <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto." class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener" data-reveal>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.526l-.999 3.648 3.805-.873zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+          <span>Iniciar un proyecto</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact" aria-label="Contacto">
+      <div class="container contact__grid">
+        <div class="contact__copy">
+          <span class="eyebrow" data-reveal>— Contacto</span>
+          <h2 class="display" data-reveal>Hablemos de su <em>próxima obra</em>.</h2>
+          <p data-reveal>Cuéntenos qué tiene en mente. Respondemos en menos de 24 horas hábiles y agendamos una primera reunión sin compromiso, en cualquiera de nuestras cuatro sedes.</p>
+
+          <ul class="contact__list">
+            <li data-reveal>
+              <span class="contact__label">WhatsApp (Cotizaciones)</span>
+              <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto." target="_blank" rel="noopener">+593 99 580 1102</a>
+            </li>
+            <li data-reveal>
+              <span class="contact__label">Correo</span>
+              <a href="mailto:contacto@aedificateconstructora.com">contacto@aedificateconstructora.com</a>
+            </li>
+            <li data-reveal>
+              <span class="contact__label">Instagram</span>
+              <a href="https://instagram.com/aedificateconstructora" target="_blank" rel="noopener">@aedificateconstructora</a>
+            </li>
+            <li data-reveal>
+              <span class="contact__label">Sitio web</span>
+              <a href="https://aedificateconstructora.com" target="_blank" rel="noopener">aedificateconstructora.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact__form" id="contactForm" novalidate data-reveal>
+          <div class="field">
+            <label for="f-name">Nombre</label>
+            <input id="f-name" name="name" type="text" required placeholder="Su nombre completo" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="f-email">Correo</label>
+            <input id="f-email" name="email" type="email" required placeholder="su@correo.com" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="f-phone">Teléfono</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+593 9..." autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="f-type">Tipo de proyecto</label>
+            <select id="f-type" name="type">
+              <option>Residencial</option>
+              <option>Comercial</option>
+              <option>Institucional</option>
+              <option>Industrial</option>
+              <option>Remodelación</option>
+              <option>Consultoría</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="f-city">Ciudad</label>
+            <select id="f-city" name="city">
+              <option>Quito</option>
+              <option>Macas</option>
+              <option>Cuenca</option>
+              <option>Loja</option>
+              <option>Otra</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="f-msg">Mensaje</label>
+            <textarea id="f-msg" name="message" rows="5" required placeholder="Cuéntenos brevemente qué necesita."></textarea>
+          </div>
+          <div class="field field--full contact__submit">
+            <button type="submit" class="btn btn--whatsapp btn--lg">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+              <span>Enviar y continuar por WhatsApp</span>
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container footer__top">
+      <a href="#top" class="footer__brand" aria-label="Volver al inicio">
+        <img class="nav__logo nav__logo--footer" src="Logos/Monograma Logo.png" alt="" />
+        <span>Aedificate Constructora</span>
+      </a>
+      <p class="footer__tag"><strong>Construimos con calidad, proyectamos confianza.</strong><br/>Obras civiles · Infraestructura · Construcción integral — en cuatro ciudades del Ecuador.</p>
+    </div>
+
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <h4>Estudio</h4>
+        <ul>
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#process">Proceso</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#services">Consultoría y Gestión</a></li>
+          <li><a href="#services">Diseño e Ingeniería</a></li>
+          <li><a href="#services">Obras Civiles</a></li>
+          <li><a href="#services">Construcción Industrial</a></li>
+          <li><a href="#services">Infraestructura</a></li>
+          <li><a href="#services">Gestión Ambiental</a></li>
+          <li><a href="#services">Capacitación</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Sedes</h4>
+        <ul class="footer__sedes">
+          <li>
+            <span class="footer__city">Quito <em>HQ</em></span>
+            <span class="footer__addr">Av. República del Salvador N36-14<br/>Edificio Mansión Blanca, Of. 502</span>
+          </li>
+          <li>
+            <span class="footer__city">Macas</span>
+            <span class="footer__addr">Av. 29 de Mayo y Soasti<br/>Morona Santiago</span>
+          </li>
+          <li>
+            <span class="footer__city">Cuenca</span>
+            <span class="footer__addr">Av. Solano 12-30 y Remigio Tamariz<br/>Azuay</span>
+          </li>
+          <li>
+            <span class="footer__city">Loja</span>
+            <span class="footer__addr">Av. Universitaria y Río Zamora<br/>Loja</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul class="footer__contact">
+          <li>
+            <span class="footer__label">WhatsApp</span>
+            <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto." target="_blank" rel="noopener" class="footer__wa">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+              +593 99 580 1102
+            </a>
+          </li>
+          <li>
+            <span class="footer__label">Correo</span>
+            <a href="mailto:contacto@aedificateconstructora.com">contacto@aedificateconstructora.com</a>
+          </li>
+          <li>
+            <span class="footer__label">Sitio web</span>
+            <a href="https://aedificateconstructora.com" target="_blank" rel="noopener">aedificateconstructora.com</a>
+          </li>
+          <li>
+            <span class="footer__label">Instagram</span>
+            <a href="https://instagram.com/aedificateconstructora" target="_blank" rel="noopener" class="footer__ig">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @aedificateconstructora
+            </a>
+          </li>
+        </ul>
+
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="https://instagram.com/aedificateconstructora" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://wa.me/593995801102" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+          <a href="https://aedificateconstructora.com" target="_blank" rel="noopener" aria-label="Sitio web">WEB</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© <span id="year">2025</span> Aedificate Constructora · aedificateconstructora.com · Todos los derechos reservados.</span>
+      <ul>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Términos</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto."
+     class="wa-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contactar por WhatsApp al +593 99 580 1102">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.526l-.999 3.648 3.805-.873zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+    </svg>
+    <span class="wa-float__tooltip">Cotice su proyecto por WhatsApp</span>
+    <span class="wa-float__pulse" aria-hidden="true"></span>
+  </a>
+
+  <script src="script.js" defer></script>
+
+  <!-- Carruseles: slider de testimonios + mini-carrusel de proyectos -->
+  <script>
+  (function () {
+    // --- Testimonios ---
+    var tt = document.getElementById('tTrack');
+    if (tt) {
+      var cards = tt.querySelectorAll('.t-card');
+      var td = document.getElementById('tDots'), tp = document.getElementById('tPrev'), tn = document.getElementById('tNext');
+      var i = 0, t = null;
+      cards.forEach(function (_, n) {
+        var d = document.createElement('button');
+        d.className = 't-dot' + (n === 0 ? ' is-active' : '');
+        d.addEventListener('click', function () { go(n); restart(); });
+        if (td) td.appendChild(d);
+      });
+      function go(n) { i = ((n % cards.length) + cards.length) % cards.length; tt.style.transition = 'transform .7s cubic-bezier(.22,.61,.36,1)'; tt.style.transform = 'translateX(-' + cards[i].offsetLeft + 'px)'; var ds = document.querySelectorAll('.t-dot'); for (var d = 0; d < ds.length; d++) ds[d].classList.toggle('is-active', d === i); }
+      function restart() { clearInterval(t); t = setInterval(function () { go(i + 1); }, 5000); }
+      if (tp) tp.addEventListener('click', function () { go(i - 1); restart(); });
+      if (tn) tn.addEventListener('click', function () { go(i + 1); restart(); });
+      var ts = document.getElementById('tSlider');
+      if (ts) { ts.addEventListener('mouseenter', function () { clearInterval(t); }); ts.addEventListener('mouseleave', restart); }
+      window.addEventListener('resize', function () { go(i); });
+      restart();
+    }
+
+    // --- Mini-carrusel proyectos ---
+    document.querySelectorAll('.project--gallery').forEach(function (card, ci) {
+      var imgs = card.querySelectorAll('.project__img');
+      if (imgs.length < 2) return;
+      var dots = card.querySelectorAll('.project__indicator span');
+      var idx = 0, timer = null;
+      function go(n) { idx = ((n % imgs.length) + imgs.length) % imgs.length; for (var j = 0; j < imgs.length; j++) imgs[j].classList.toggle('is-active', j === idx); for (var k = 0; k < dots.length; k++) dots[k].classList.toggle('is-active', k === idx); }
+      function start() { clearInterval(timer); timer = setInterval(function () { go(idx + 1); }, 5000); }
+      card.addEventListener('mouseenter', function () { clearInterval(timer); });
+      card.addEventListener('mouseleave', start);
+      var ind = card.querySelector('.project__indicator');
+      if (ind) ind.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); var r = ind.getBoundingClientRect(); go(Math.floor((e.clientX - r.left) / (r.width / imgs.length))); if (!card.matches(':hover')) start(); });
+      setTimeout(start, ci * 800);
+    });
+  })();
+  </script>
+</body>
+</html>
