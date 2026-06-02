@@ -111,20 +111,66 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <ul>
-      <li><a href="#about" data-link>Estudio</a></li>
-      <li><a href="#services" data-link>Servicios</a></li>
-      <li><a href="#projects" data-link>Proyectos</a></li>
-      <li><a href="#process" data-link>Proceso</a></li>
-      <li><a href="#contact" data-link>Contacto</a></li>
+    <div class="mobile-menu__head">
+      <span class="mobile-menu__label">Menú</span>
+      <span class="mobile-menu__close" aria-hidden="true">×</span>
+    </div>
+
+    <ul class="mobile-menu__list">
+      <li>
+        <a href="#about" data-link>
+          <span class="mm-num">01</span>
+          <span class="mm-text">Estudio</span>
+          <svg class="mm-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#services" data-link>
+          <span class="mm-num">02</span>
+          <span class="mm-text">Servicios</span>
+          <svg class="mm-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#projects" data-link>
+          <span class="mm-num">03</span>
+          <span class="mm-text">Proyectos</span>
+          <svg class="mm-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#process" data-link>
+          <span class="mm-num">04</span>
+          <span class="mm-text">Proceso</span>
+          <svg class="mm-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" data-link>
+          <span class="mm-num">05</span>
+          <span class="mm-text">Contacto</span>
+          <svg class="mm-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </li>
     </ul>
+
     <div class="mobile-menu__foot">
-      <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto." class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+      <a href="https://wa.me/593995801102?text=Hola%20Aedificate%2C%20me%20interesa%20iniciar%20un%20proyecto." class="mobile-menu__wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24z"/></svg>
         <span>Escríbenos por WhatsApp</span>
       </a>
-      <p style="margin-top:1.5rem">aedificateconstructora.com</p>
+      <a href="tel:+593995801102" class="mobile-menu__phone">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        +593 99 580 1102
+      </a>
+      <div class="mobile-menu__social">
+        <a href="https://instagram.com/aedificateconstructora" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="https://aedificateconstructora.com" target="_blank" rel="noopener" aria-label="Sitio web">Web</a>
+        <a href="mailto:contacto@aedificateconstructora.com" aria-label="Email">Email</a>
+      </div>
+      <p class="mobile-menu__domain">aedificateconstructora.com</p>
     </div>
+  </div>
   </div>
 
   <main id="top">

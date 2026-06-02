@@ -54,6 +54,8 @@
   const openMenu  = () => { burger?.classList.add('is-open'); mm?.classList.add('is-open'); burger?.setAttribute('aria-expanded', 'true'); mm?.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; };
   burger?.addEventListener('click', () => mm.classList.contains('is-open') ? closeMenu() : openMenu());
   $$('[data-link]', mm).forEach(a => a.addEventListener('click', closeMenu));
+  mm?.querySelector('.mobile-menu__close')?.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && mm?.classList.contains('is-open')) closeMenu(); });
 
   /* ---------- 4. SCROLL PROGRESS ---------- */
   const sp = $('#scrollProgress');
