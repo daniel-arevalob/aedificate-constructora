@@ -82,50 +82,6 @@
     });
   }
 
-  const goTo = (i, fromUser = false) => {
-    if (i === current) return;
-    slides[current]?.classList.remove('is-active');
-    slides[i]?.classList.add('is-active');
-    $$('.hero__thumb').forEach((t, idx) => t.classList.toggle('is-active', idx === i));
-    if (currentEl) currentEl.textContent = String(i + 1).padStart(2, '0');
-    current = i;
-    if (fromUser) restartTimer();
-  };
-  const next = () => goTo((current + 1) % total);
-  const prev = () => goTo((current - 1 + total) % total);
-
-  const startTimer = () => { if (prefersReduced()) return; timer = setInterval(next, 5500); };
-  const stopTimer  = () => { if (timer) { clearInterval(timer); timer = null; } };
-  const restartTimer = () => { stopTimer(); startTimer(); };
-
-  prevBtn?.addEventListener('click', () => { prev(); restartTimer(); });
-  nextBtn?.addEventListener('click', () => { next(); restartTimer(); });
-
-  // Pause on hover
-  const hero = $('.hero');
-  hero?.addEventListener('mouseenter', stopTimer);
-  hero?.addEventListener('mouseleave', startTimer);
-
-  // Keyboard
-  document.addEventListener('keydown', e => {
-    if (!$('.hero')) return;
-    const rect = $('.hero').getBoundingClientRect();
-    const inView = rect.bottom > 0 && rect.top < window.innerHeight;
-    if (!inView) return;
-    if (e.key === 'ArrowRight') { next(); restartTimer(); }
-    if (e.key === 'ArrowLeft')  { prev(); restartTimer(); }
-  });
-
-  // Touch swipe
-  let tx = 0;
-  hero?.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-  hero?.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - tx;
-    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); restartTimer(); }
-  }, { passive: true });
-
-  startTimer();
-
   /* ---------- 6. INTERSECTION OBSERVER (REVEAL) ---------- */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(en => {
