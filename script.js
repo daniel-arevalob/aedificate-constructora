@@ -25,16 +25,15 @@
   }
   setTimeout(hidePreloader, 2500);
 
-  /* ---------- 2. CUSTOM CURSOR (Lucide hammer) ---------- */
+  /* ---------- 2. CUSTOM CURSOR (Lucide hammer - posición natural) ---------- */
   const cursor = $('#cursor');
   if (cursor && !isMobile() && !prefersReduced()) {
     let mx = 0, my = 0, cx = 0, cy = 0;
-    // El SVG está rotado 135° en CSS, así que la punta del mango (originalmente
-    // en la esquina inferior-izquierda del viewBox) ahora está en la
-    // esquina superior-derecha del cursor renderizado. Calculamos esa posición
-    // para que sea el hotspot (donde "sostienes" el martillo).
-    const HOT_X = 13;
-    const HOT_Y = 0;
+    // El SVG está volteado y rotado, así que la "cara que golpea" (cabeza)
+    // queda en la parte superior-izquierda del cursor renderizado.
+    // Aproximamos el hotspot en la parte de la cabeza que contacta.
+    const HOT_X = 4;
+    const HOT_Y = 8;
     window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
     const tick = () => {
       cx += (mx - cx) * 0.2;

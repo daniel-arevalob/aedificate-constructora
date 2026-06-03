@@ -192,34 +192,36 @@ em { font-style: italic; color: var(--gold-500); font-family: var(--serif); }
 }
 @keyframes preloader { to { width: 100%; } }
 
-/* ---------- 5. CUSTOM CURSOR (Lucide hammer) ---------- */
+/* ---------- 5. CUSTOM CURSOR (Lucide hammer - posición natural de agarre) ---------- */
 .cursor {
   position: fixed; top: 0; left: 0; z-index: 999;
   pointer-events: none;
   mix-blend-mode: difference;
-  width: 22px; height: 22px;
+  width: 24px; height: 24px;
   display: grid; place-items: center;
   will-change: transform;
 }
 .cursor__hammer {
   width: 100%; height: 100%;
   color: var(--white);
-  /* 135° de rotación: la cabeza del martillo apunta hacia abajo-izquierda,
-     la punta del mango (hotspot) queda arriba-derecha — como sosteniéndolo */
-  transform: rotate(135deg) scale(1);
+  /* Posición natural de agarre:
+     - scaleX(-1) voltea el martillo (cabeza a la izquierda, mango a la derecha)
+     - rotate(-15deg) inclina 15° CCW para que el mango quede diagonal (~60° desde la horizontal)
+     - Resultado: cabeza arriba-izquierda, mango diagonal hacia abajo-derecha */
+  transform: scaleX(-1) rotate(-15deg) scale(1);
   transform-origin: 50% 50%;
   transition: transform .35s var(--ease), color .25s var(--ease), filter .35s var(--ease), opacity .25s var(--ease);
   filter: drop-shadow(0 1px 3px rgba(0,0,0,.4));
 }
-/* Hover: martillo se "eleva" (más rotación) listo para golpear */
+/* Hover: martillo se "eleva" (más rotación, mango más vertical) */
 .cursor.is-hover .cursor__hammer {
-  transform: rotate(150deg) scale(1.12);
+  transform: scaleX(-1) rotate(-30deg) scale(1.12);
   color: var(--gold-300);
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.5));
 }
-/* Strike: rotación agresiva + glow gold */
+/* Strike: rotación máxima + glow gold */
 .cursor.is-strike .cursor__hammer {
-  transform: rotate(170deg) scale(1.25);
+  transform: scaleX(-1) rotate(-50deg) scale(1.25);
   color: var(--gold-500);
   filter: drop-shadow(0 0 10px var(--gold-500));
 }
