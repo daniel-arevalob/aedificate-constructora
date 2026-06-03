@@ -24,7 +24,7 @@
   <!-- Fonts: Fraunces (display serif) + Inter (UI sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="Logos/Monograma Logo.png" />
@@ -102,15 +102,37 @@
     "@type": "GeneralContractor",
     "name": "Aedificate Constructora",
     "url": "https://aedificateconstructora.com",
+    "logo": "https://aedificateconstructora.com/Logos/Logo%20Aedificate.png",
+    "image": "https://aedificateconstructora.com/Logos/Logo%20Aedificate.png",
     "telephone": "+593-99-580-1102",
+    "email": "contacto@aedificateconstructora.com",
+    "foundingDate": "2018",
+    "priceRange": "$$",
+    "slogan": "Innovación y calidad en la construcción.",
     "description": "Constructora ecuatoriana especializada en arquitectura, estructura e ingeniería. Obras residenciales, comerciales e industriales.",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Av. República del Salvador N36-14, Edificio Mansión Blanca, Of. 502",
       "addressLocality": "Quito",
+      "addressRegion": "Pichincha",
       "addressCountry": "EC"
     },
-    "areaServed": ["Quito", "Macas", "Cuenca", "Loja"],
-    "sameAs": ["https://instagram.com/aedificateconstructora"]
+    "areaServed": [
+      { "@type": "City", "name": "Quito" },
+      { "@type": "City", "name": "Macas" },
+      { "@type": "City", "name": "Cuenca" },
+      { "@type": "City", "name": "Loja" }
+    ],
+    "location": [
+      { "@type": "Place", "name": "Sede Quito (Casa matriz)", "address": "Av. República del Salvador N36-14, Edificio Mansión Blanca, Of. 502, Quito" },
+      { "@type": "Place", "name": "Sede Macas", "address": "Av. 29 de Mayo y Soasti, Macas, Morona Santiago" },
+      { "@type": "Place", "name": "Sede Cuenca", "address": "Av. Solano 12-30 y Remigio Tamariz, Cuenca, Azuay" },
+      { "@type": "Place", "name": "Sede Loja", "address": "Av. Universitaria y Río Zamora, Loja" }
+    ],
+    "sameAs": [
+      "https://instagram.com/aedificateconstructora",
+      "https://www.facebook.com/aedificate"
+    ]
   }
   </script>
 
@@ -118,6 +140,9 @@
   <script>document.documentElement.classList.add('has-js');</script>
 </head>
 <body>
+  <!-- Skip link (accesibilidad: primer foco por teclado) -->
+  <a href="#top" class="skip-link">Saltar al contenido</a>
+
   <!-- Preloader -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__inner">
@@ -345,8 +370,8 @@
     <section class="about" id="about" aria-label="Estudio">
       <div class="container about__grid">
         <div class="about__media">
-          <div class="about__img about__img--main" style="background-image:url('https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=1600&q=80')"></div>
-          <div class="about__img about__img--sub" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="about__img about__img--main" style="background-image:url('Assets/04-residencia-ls/03.jpg')"></div>
+          <div class="about__img about__img--sub" style="background-image:url('Assets/05-quinta-je/01.jpg')"></div>
           <div class="about__badge">
             <span class="about__badge-num">7</span>
             <span class="about__badge-text">Años<br/>forjando oficio</span>
@@ -704,7 +729,7 @@
           </a>
 
           <a class="project" data-cat="residential" data-reveal>
-            <div class="project__img is-active" style="background-image:url('Assets/03-edificio-hd/01.png')"></div>
+            <div class="project__img is-active" style="background-image:url('Assets/03-edificio-hd/01.jpg')"></div>
             <div class="project__meta">
               <span class="project__cat">Residencial · Hormigón armado</span>
               <h3 class="project__title">Edificio Residencial HD</h3>
@@ -716,7 +741,7 @@
           <a class="project project--wide project--gallery" data-cat="residential" data-reveal>
             <div class="project__gallery">
               <div class="project__img is-active" style="background-image:url('Assets/04-residencia-ls/01.jpg')"></div>
-              <div class="project__img" style="background-image:url('Assets/04-residencia-ls/02.png')"></div>
+              <div class="project__img" style="background-image:url('Assets/04-residencia-ls/02.jpg')"></div>
               <div class="project__img" style="background-image:url('Assets/04-residencia-ls/03.jpg')"></div>
               <div class="project__img" style="background-image:url('Assets/04-residencia-ls/04.jpg')"></div>
               <div class="project__img" style="background-image:url('Assets/04-residencia-ls/05.jpg')"></div>
@@ -750,6 +775,8 @@
             </div>
           </a>
         </div>
+
+        <p class="projects__empty" id="projectsEmpty" hidden>No hay obras destacadas en esta categoría — revísalas en el portafolio completo.</p>
 
         <!-- Portafolio completo: 22 proyectos, agrupados por categoría, sin imagen -->
         <div class="portfolio" data-reveal>
@@ -990,7 +1017,7 @@
         <header class="process__head">
           <span class="eyebrow" data-reveal>— Manera de trabajar</span>
           <h2 class="display" data-reveal>Cuatro etapas. <em>Cero</em> improvisación.</h2>
-          <p data-reveal>Cada proyecto pasa por un protocolo afinado en más de 80 obras. La comunicación es directa, los plazos se cumplen y la calidad no se negocia — en ninguna de nuestras cuatro sedes.</p>
+          <p data-reveal>Cada proyecto pasa por un protocolo afinado obra tras obra. La comunicación es directa, los plazos se cumplen y la calidad no se negocia — en ninguna de nuestras cuatro sedes.</p>
         </header>
 
         <ol class="process__list">

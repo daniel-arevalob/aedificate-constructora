@@ -68,20 +68,41 @@
   window.addEventListener('scroll', updateProgress, { passive: true });
 
   /* ---------- 5. HERO VIDEO BACKGROUND ----------
-     El <video> tiene autoplay+muted+loop+playsinline en el HTML.
-     Este bloque solo añade un fallback de play() por si el navegador
-     retrasa el autoplay, y pausa/reanuda según visibilidad. */
+     <video> tiene autoplay+muted+loop+playsinline.
+     Auto-reanuda si el navegador lo pausa (por throttling, pestaña
+     en background, etc.). NO pausamos en visibilitychange para evitar
+     pausas espurias del navegador. */
   const heroVideo = $('.hero__video');
-  if (heroVideo) {
-    heroVideo.addEventListener('canplay', () => {
+  const saveData = navigator.connection && navigator.connection.saveData;
+  if (heroVideo && saveData) {
+    // Modo ahorro de datos: no descargar ni reproducir el video.
+    heroVideo.preload = 'none';
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
+  } else if (heroVideo) {
+    let userPaused = false;
+    heroVideo.addEventListener('pause', () => { /* marca solo pausas del usuario */ });
+    heroVideo.addEventListener('play', () => { /* tracking */ });
+
+    // Función de auto-reanudar: si el video se pausa sin que el usuario lo pida,
+    // y la pestaña está visible, lo reproducimos de nuevo.
+    function keepAlive() {
+      if (!heroVideo.paused) return;
+      if (userPaused) return;
+      if (document.hidden) return;
+      if (heroVideo.ended) heroVideo.currentTime = 0;
       const p = heroVideo.play();
       if (p && typeof p.catch === 'function') p.catch(() => {});
-    });
-    // Pausa si la pestaña no está visible (ahorra batería)
+    }
+    // Chequea cada 2s si el video se pausó accidentalmente
+    setInterval(keepAlive, 2000);
+
+    // Reanudar al volver a la pestaña
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden) heroVideo.pause();
-      else heroVideo.play().catch(() => {});
+      if (!document.hidden) keepAlive();
     });
+    // Reanudar al recibir foco la ventana
+    window.addEventListener('focus', keepAlive);
   }
 
   /* ---------- 6. INTERSECTION OBSERVER (REVEAL) ---------- */
@@ -118,12 +139,17 @@
   const portfolioItems = $$('.portfolio__item');
   const portfolioGroups = $$('.portfolio__group');
 
+  const emptyMsg = $('#projectsEmpty');
   const applyFilter = (f) => {
     // Featured projects grid
+    let visibleFeatured = 0;
     projects.forEach(p => {
       const match = f === 'all' || p.dataset.cat === f;
       p.classList.toggle('is-hidden', !match);
+      if (match) visibleFeatured++;
     });
+    // Mensaje cuando la categoría no tiene obras destacadas (el portafolio sí las lista)
+    if (emptyMsg) emptyMsg.hidden = visibleFeatured > 0;
     // Portfolio list items
     portfolioItems.forEach(li => {
       const match = f === 'all' || li.dataset.cat === f;
@@ -172,9 +198,6 @@
       status.style.color = '#c0392b';
       return;
     }
-    status.textContent = 'Abriendo WhatsApp...';
-    status.style.color = 'var(--gold-600)';
-
     const lines = [
       `Hola Aedificate, me interesa iniciar un proyecto.`,
       ``,
@@ -189,13 +212,23 @@
     ].filter(Boolean);
 
     const text = encodeURIComponent(lines.join('\n'));
-    const url = `https://wa.me/${WA_PHONE}?text=${text}`;
+    const waUrl = `https://wa.me/${WA_PHONE}?text=${text}`;
+    const mailUrl = `mailto:contacto@aedificateconstructora.com`
+      + `?subject=${encodeURIComponent('Nuevo proyecto — ' + data.name)}&body=${text}`;
 
-    setTimeout(() => {
-      window.open(url, '_blank', 'noopener');
-      status.textContent = 'Gracias. WhatsApp se abrió en una pestaña nueva.';
+    status.style.color = 'var(--gold-600)';
+    // Abrir DENTRO del gesto del usuario: un setTimeout rompía el gesto y el
+    // popup-blocker bloqueaba la pestaña (se perdía el lead).
+    const win = window.open(waUrl, '_blank', 'noopener');
+    if (win) {
+      status.innerHTML = 'Gracias. WhatsApp se abrió en una pestaña nueva. '
+        + `Si no apareció, <a href="${waUrl}" target="_blank" rel="noopener">ábrelo aquí</a>.`;
       form.reset();
-    }, 500);
+    } else {
+      // Popup bloqueado → ofrecemos enlaces directos (WhatsApp + correo) para no perder el contacto.
+      status.innerHTML = `Continúa por <a href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a> `
+        + `o envíanos un <a href="${mailUrl}">correo</a>.`;
+    }
   });
 
   /* ---------- 11. NEWSLETTER ---------- */
