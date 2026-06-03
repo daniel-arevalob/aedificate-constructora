@@ -25,13 +25,14 @@
   }
   setTimeout(hidePreloader, 2500);
 
-  /* ---------- 2. CUSTOM CURSOR (martillo) ---------- */
+  /* ---------- 2. CUSTOM CURSOR (Lucide hammer) ---------- */
   const cursor = $('#cursor');
   if (cursor && !isMobile() && !prefersReduced()) {
     let mx = 0, my = 0, cx = 0, cy = 0;
-    // Offset para que el hotspot sea la punta del mango (extremo inferior derecho del martillo)
-    const HOT_X = 8;
-    const HOT_Y = 8;
+    // El Lucide hammer tiene el mango en la esquina inferior-izquierda (≈2,18 en el viewBox 24×24).
+    // Ajustamos para que ese punto sea el "hotspot" del cursor.
+    const HOT_X = 2;
+    const HOT_Y = 18;
     window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
     const tick = () => {
       cx += (mx - cx) * 0.2;
@@ -40,9 +41,7 @@
       requestAnimationFrame(tick);
     };
     tick();
-    // Hover sobre elementos interactivos → "eleva el martillo"
     const hoverSel = 'a, button, .chip, .project, .t-arrow, .hero__arrow, .nav__burger, input, textarea, select';
-    // Strike (golpe) sobre CTAs principales (WhatsApp, gold) → "martillo cae a golpear"
     const strikeSel = '.btn--whatsapp, .btn--gold, .wa-float, .footer__cta';
     document.addEventListener('mouseover', e => {
       const el = e.target.closest(hoverSel);
@@ -53,11 +52,7 @@
     document.addEventListener('mouseout', e => {
       const el = e.target.closest(hoverSel);
       if (!el) return;
-      // Solo limpia is-strike cuando sales del elemento exacto que lo disparó
       if (el.matches && el.matches(strikeSel)) cursor.classList.remove('is-strike');
-      // Limpia is-hover solo si no estamos entrando a OTRO elemento interactivo
-      // (el mouseout se dispara antes del mouseover del nuevo target)
-      // Pequeño timeout para evitar flicker
       setTimeout(() => {
         if (!document.querySelector(':hover')) cursor.classList.remove('is-hover');
       }, 10);
