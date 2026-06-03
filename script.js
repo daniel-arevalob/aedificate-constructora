@@ -124,19 +124,30 @@
   }
 
   /* ---------- 5B. ABOUT VIDEO (equipo de trabajo) ----------
-     Mismo patrón que el hero: autoplay + auto-reanudar si el navegador
-     lo pausa. Sin keepAlive agresivo (este video está más abajo en la página
-     y no necesita ser tan persistente). */
+     El video empieza solo cuando la sección About entra al viewport
+     (IntersectionObserver). Al salir, se pausa para ahorrar recursos.
+     Sin keepAlive agresivo — no necesita ser persistente como el hero. */
   const aboutVideo = $('.about__video');
-  if (aboutVideo) {
-    aboutVideo.addEventListener('canplay', () => {
-      const p = aboutVideo.play();
-      if (p && typeof p.catch === 'function') p.catch(() => {});
-    });
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) aboutVideo.pause();
-      else aboutVideo.play().catch(() => {});
-    });
+  if (aboutVideo && 'IntersectionObserver' in window) {
+    let aboutStarted = false;
+    const aboutObserver = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting && !aboutStarted) {
+          // Inicia el video al primer avistamiento
+          aboutStarted = true;
+          const p = aboutVideo.play();
+          if (p && typeof p.catch === 'function') p.catch(() => {});
+        } else if (!en.isIntersecting && aboutStarted) {
+          // Pausa al salir del viewport (ahorra CPU)
+          aboutVideo.pause();
+        } else if (en.isIntersecting && aboutStarted) {
+          // Reanuda al volver
+          const p = aboutVideo.play();
+          if (p && typeof p.catch === 'function') p.catch(() => {});
+        }
+      });
+    }, { threshold: 0.3 });
+    aboutObserver.observe(aboutVideo);
   }
 
   /* ---------- 6. INTERSECTION OBSERVER (REVEAL) ---------- */
