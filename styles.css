@@ -192,21 +192,34 @@ em { font-style: italic; color: var(--gold-500); font-family: var(--serif); }
 }
 @keyframes preloader { to { width: 100%; } }
 
-/* ---------- 5. CUSTOM CURSOR ---------- */
-.cursor { position: fixed; top: 0; left: 0; z-index: 999; pointer-events: none; mix-blend-mode: difference; }
-.cursor__dot, .cursor__ring { position: absolute; top: 0; left: 0; border-radius: 50%; }
-.cursor__dot {
-  width: 5px; height: 5px; background: var(--white);
-  transform: translate(-50%, -50%);
-  transition: transform .2s var(--ease-out), background .25s var(--ease);
+/* ---------- 5. CUSTOM CURSOR (martillo) ---------- */
+.cursor {
+  position: fixed; top: 0; left: 0; z-index: 999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  transform-origin: 50% 50%;
+  will-change: transform;
 }
-.cursor__ring {
-  width: 30px; height: 30px; border: 1px solid rgba(255,255,255,.35);
-  transform: translate(-50%, -50%);
-  transition: width .35s var(--ease-out), height .35s var(--ease-out), border-color .35s var(--ease), opacity .35s var(--ease);
+.cursor__hammer {
+  width: 100%; height: 100%;
+  color: var(--white);
+  transform: rotate(-25deg) scale(1);
+  transition: transform .35s var(--ease), color .25s var(--ease), filter .35s var(--ease);
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.3));
 }
-.cursor.is-hover .cursor__dot { transform: translate(-50%, -50%) scale(.4); }
-.cursor.is-hover .cursor__ring { width: 52px; height: 52px; border-color: var(--gold-400); }
+/* Hover sobre elementos interactivos: martillo se "eleva" listo para golpear */
+.cursor.is-hover .cursor__hammer {
+  transform: rotate(-15deg) scale(1.1);
+  color: var(--gold-300);
+}
+/* Strike: golpear CTA (botón WhatsApp, gold, etc.) — rotación agresiva + scale */
+.cursor.is-strike .cursor__hammer {
+  transform: rotate(-5deg) scale(1.2);
+  color: var(--gold-500);
+  filter: drop-shadow(0 0 12px var(--gold-500));
+}
 @media (hover: none) { .cursor { display: none; } body.has-js { cursor: auto; } }
 
 /* ---------- 6. SCROLL PROGRESS ---------- */

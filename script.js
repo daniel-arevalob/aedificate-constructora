@@ -25,21 +25,43 @@
   }
   setTimeout(hidePreloader, 2500);
 
-  /* ---------- 2. CUSTOM CURSOR ---------- */
+  /* ---------- 2. CUSTOM CURSOR (martillo) ---------- */
   const cursor = $('#cursor');
   if (cursor && !isMobile() && !prefersReduced()) {
     let mx = 0, my = 0, cx = 0, cy = 0;
+    // Offset para que el hotspot sea la punta del mango (extremo inferior derecho del martillo)
+    const HOT_X = 8;
+    const HOT_Y = 8;
     window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
     const tick = () => {
-      cx += (mx - cx) * 0.18;
-      cy += (my - cy) * 0.18;
-      cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+      cx += (mx - cx) * 0.2;
+      cy += (my - cy) * 0.2;
+      cursor.style.transform = `translate3d(${cx - HOT_X}px, ${cy - HOT_Y}px, 0)`;
       requestAnimationFrame(tick);
     };
     tick();
+    // Hover sobre elementos interactivos → "eleva el martillo"
     const hoverSel = 'a, button, .chip, .project, .t-arrow, .hero__arrow, .nav__burger, input, textarea, select';
-    document.addEventListener('mouseover', e => { if (e.target.closest(hoverSel)) cursor.classList.add('is-hover'); });
-    document.addEventListener('mouseout',  e => { if (e.target.closest(hoverSel)) cursor.classList.remove('is-hover'); });
+    // Strike (golpe) sobre CTAs principales (WhatsApp, gold) → "martillo cae a golpear"
+    const strikeSel = '.btn--whatsapp, .btn--gold, .wa-float, .footer__cta';
+    document.addEventListener('mouseover', e => {
+      const el = e.target.closest(hoverSel);
+      if (!el) return;
+      cursor.classList.add('is-hover');
+      if (el.matches && el.matches(strikeSel)) cursor.classList.add('is-strike');
+    });
+    document.addEventListener('mouseout', e => {
+      const el = e.target.closest(hoverSel);
+      if (!el) return;
+      // Solo limpia is-strike cuando sales del elemento exacto que lo disparó
+      if (el.matches && el.matches(strikeSel)) cursor.classList.remove('is-strike');
+      // Limpia is-hover solo si no estamos entrando a OTRO elemento interactivo
+      // (el mouseout se dispara antes del mouseover del nuevo target)
+      // Pequeño timeout para evitar flicker
+      setTimeout(() => {
+        if (!document.querySelector(':hover')) cursor.classList.remove('is-hover');
+      }, 10);
+    });
   }
 
   /* ---------- 3. NAV (scroll + mobile) ---------- */
