@@ -29,10 +29,12 @@
   const cursor = $('#cursor');
   if (cursor && !isMobile() && !prefersReduced()) {
     let mx = 0, my = 0, cx = 0, cy = 0;
-    // El Lucide hammer tiene el mango en la esquina inferior-izquierda (≈2,18 en el viewBox 24×24).
-    // Ajustamos para que ese punto sea el "hotspot" del cursor.
-    const HOT_X = 2;
-    const HOT_Y = 18;
+    // El SVG está rotado 135° en CSS, así que la punta del mango (originalmente
+    // en la esquina inferior-izquierda del viewBox) ahora está en la
+    // esquina superior-derecha del cursor renderizado. Calculamos esa posición
+    // para que sea el hotspot (donde "sostienes" el martillo).
+    const HOT_X = 13;
+    const HOT_Y = 0;
     window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
     const tick = () => {
       cx += (mx - cx) * 0.2;
