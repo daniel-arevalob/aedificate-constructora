@@ -11,6 +11,14 @@
   <meta property="og:description" content="Construimos lo que perdura. Quito · Macas · Cuenca · Loja." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aedificateconstructora.com" />
+  <meta property="og:locale" content="es_EC" />
+  <meta property="og:site_name" content="Aedificate Constructora" />
+  <meta property="og:image" content="https://aedificateconstructora.com/Logos/Logo%20Aedificate.png" />
+  <meta property="og:image:alt" content="Aedificate Constructora — Innovación y calidad en la construcción." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aedificate Constructora — Arquitectura, Estructura e Ingeniería" />
+  <meta name="twitter:description" content="Construimos lo que perdura. Quito · Macas · Cuenca · Loja." />
+  <meta name="twitter:image" content="https://aedificateconstructora.com/Logos/Logo%20Aedificate.png" />
   <link rel="canonical" href="https://aedificateconstructora.com" />
 
   <!-- Fonts: Fraunces (display serif) + Inter (UI sans) -->
@@ -24,6 +32,7 @@
   <!-- Counters: aparecen espontáneamente con count-up al entrar al viewport -->
   <script>
     (function () {
+      function init() {
       var els = document.querySelectorAll('[data-count]');
       if (!els.length) return;
 
@@ -74,6 +83,15 @@
       setTimeout(function () {
         els.forEach(function (el) { animateCount(el); });
       }, 2000);
+      }
+
+      // Este script vive en <head>: el <body> aún no existe al ejecutarse,
+      // por eso esperamos al DOM para que querySelectorAll('[data-count]') encuentre los nodos.
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+      } else {
+        init();
+      }
     })();
   </script>
 
@@ -95,6 +113,9 @@
     "sameAs": ["https://instagram.com/aedificateconstructora"]
   }
   </script>
+
+  <!-- JS activo: habilita reveal y cursor custom antes del primer paint (evita flash) -->
+  <script>document.documentElement.classList.add('has-js');</script>
 </head>
 <body>
   <!-- Preloader -->
@@ -206,13 +227,12 @@
       <p class="mobile-menu__domain">aedificateconstructora.com</p>
     </div>
   </div>
-  </div>
 
   <main id="top">
     <!-- HERO with video background -->
     <section class="hero" aria-label="Hero">
       <div class="hero__media">
-        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="" aria-hidden="true">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
           <source src="Assets/Video/video-hero.mp4" type="video/mp4" />
         </video>
         <div class="hero__overlay"></div>
@@ -414,7 +434,7 @@
               </li>
               <li>
                 <span class="values__check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="fill" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
                 </span>
                 <div>
                   <strong>Cumplimiento de plazos</strong>

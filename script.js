@@ -56,6 +56,8 @@
   $$('[data-link]', mm).forEach(a => a.addEventListener('click', closeMenu));
   mm?.querySelector('.mobile-menu__close')?.addEventListener('click', closeMenu);
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && mm?.classList.contains('is-open')) closeMenu(); });
+  // Cierra el menú móvil si se cruza a desktop (el burger se oculta >1100px y dejaría el menú atascado)
+  window.addEventListener('resize', () => { if (window.innerWidth > 1100 && mm?.classList.contains('is-open')) closeMenu(); }, { passive: true });
 
   /* ---------- 4. SCROLL PROGRESS ---------- */
   const sp = $('#scrollProgress');
@@ -215,7 +217,7 @@
       const target = document.querySelector(id);
       if (target) {
         e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.scrollY - 60;
+        const top = target.getBoundingClientRect().top + window.scrollY - 90;
         window.scrollTo({ top, behavior: prefersReduced() ? 'auto' : 'smooth' });
       }
     });
