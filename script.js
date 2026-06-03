@@ -123,6 +123,22 @@
     window.addEventListener('focus', keepAlive);
   }
 
+  /* ---------- 5B. ABOUT VIDEO (equipo de trabajo) ----------
+     Mismo patrón que el hero: autoplay + auto-reanudar si el navegador
+     lo pausa. Sin keepAlive agresivo (este video está más abajo en la página
+     y no necesita ser tan persistente). */
+  const aboutVideo = $('.about__video');
+  if (aboutVideo) {
+    aboutVideo.addEventListener('canplay', () => {
+      const p = aboutVideo.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) aboutVideo.pause();
+      else aboutVideo.play().catch(() => {});
+    });
+  }
+
   /* ---------- 6. INTERSECTION OBSERVER (REVEAL) ---------- */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(en => {

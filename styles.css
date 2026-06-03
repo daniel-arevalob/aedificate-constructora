@@ -712,6 +712,13 @@ em { font-style: italic; color: var(--gold-500); font-family: var(--serif); }
   border: 8px solid var(--off);
   box-shadow: 0 30px 80px -30px rgba(10,22,40,.3);
 }
+/* Video reemplazando la sub-imagen (equipo de trabajo) */
+.about__video {
+  object-fit: cover;
+  object-position: center;
+  background: var(--off);
+  filter: brightness(0.95) contrast(1.05);
+}
 .about__badge {
   position: absolute; top: -30px; right: -30px;
   width: 130px; height: 130px; border-radius: 50%;
